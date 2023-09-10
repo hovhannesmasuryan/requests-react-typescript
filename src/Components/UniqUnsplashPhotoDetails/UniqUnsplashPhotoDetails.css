@@ -1,0 +1,20 @@
+
+.UniqUnsplashPhotoDetails {
+    padding-top: 100px;
+    display: flex;
+    justify-content: space-evenly;
+    position: relative;    
+    width: 100%;
+}
+
+.UniqUnsplashPhotoDetails img {
+    width: 600px;
+}
+
+.UniqUnsplashPhotoTxt .First-name {
+    font-size: 50px;
+}
+
+.UniqUnsplashPhotoTxt {
+    width: 40%;
+}
