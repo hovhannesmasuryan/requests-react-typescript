@@ -3,10 +3,10 @@ import React,{ useEffect, useState } from "react";
 import { useNavigate, useParams, } from 'react-router-dom'
 import './UniqUnsplashPhotoDetails.css'
 
-const UniqUnsplashPhotoDetails = (): JSX.Element => {
+function UniqUnsplashPhotoDetails(): JSX.Element{
   const {id} = useParams()
   const [selectedPhoto, setSelectedPhoto] = useState<any | null>(null);     
-   const navigation = useNavigate() 
+  const navigation = useNavigate() 
 
   const fetchData = async (id: string) => {      
   const apiKey = "XWdQZDOrDWHnLx7uM4-7iquo34l1mBVQ_oiGI9cbuE8";
@@ -18,7 +18,6 @@ const UniqUnsplashPhotoDetails = (): JSX.Element => {
           },
         })
         .then((response: any) => {
-          // setPhotos((prevPhotos: any) => [...prevPhotos, ...response.data]);
           setSelectedPhoto(response.data);
         })
      }
@@ -30,23 +29,25 @@ const UniqUnsplashPhotoDetails = (): JSX.Element => {
         },[id])
     
   return (
-    <div>
+    <div className="Uniqbackground">
         
+           <div className="Mdet-Back">
+               <h1>More Details</h1>
+               <button onClick={() => navigation('/')}>Back to Home</button>
+           </div>
+                 
            <div className="UniqUnsplashPhotoDetails">
-            <div>
-                 <button onClick={() => navigation('/')}>Back</button>
-                 <h1>More Details</h1>
+              <div className="img">
                  <img src={selectedPhoto?.urls?.regular} alt=""/>
-                 <h4>{selectedPhoto?.user?.location}</h4>
-                 <p>{selectedPhoto?.created_at}</p>
-            </div>
-             <div className="UniqUnsplashPhotoTxt">
-                  <h2 className='First-name'> Name:  {selectedPhoto?.user.name}</h2>
-                  <p>{selectedPhoto?.user?.bio}</p>
-                  <p className='Description'> Description:  {selectedPhoto?.alt_description}</p>
-                  <span className='Likes'> Like: {selectedPhoto?.likes}</span>
-                  
-                  
+              </div>
+
+              <div className="UniqUnsplashPhotoTxt">
+                  <h2 className='First-name'> Name: <span className="span"> {selectedPhoto?.user.name}</span></h2>
+                  <p>Bio: <span  className="span">{selectedPhoto?.user?.bio}</span></p>
+                  <h4>Location: <span  className="span">  {selectedPhoto?.user?.location} </span></h4>
+                  <p>Uploded: <span  className="span">{selectedPhoto?.created_at}</span> </p>
+                  <p className='Description'> Description: <span  className="span">  {selectedPhoto?.alt_description}</span></p>
+                  <p className='Likes'> Like:   <span className="span">{selectedPhoto?.likes}</span></p>                
              </div>
            </div>
         

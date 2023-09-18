@@ -1,14 +1,36 @@
+.Uniqbackground {
+    background-color: gray;
+    padding: 0;
+    margin: 0;
+}
+.Mdet-Back {
+    text-align: center;
+}
+.Mdet-Back button {
+    padding: 20px;
+    background-color: black;
+    color: white;
+    cursor: pointer;
+    border: none;
+}
+.Mdet-Back button:hover {
+    background-color: orange;
+}
+
+.img {
+    border: orange 10px solid ;
+}
 
 .UniqUnsplashPhotoDetails {
     padding-top: 100px;
     display: flex;
-    justify-content: space-evenly;
-    position: relative;    
+    justify-content: space-evenly;    
     width: 100%;
 }
 
 .UniqUnsplashPhotoDetails img {
     width: 600px;
+    height: 600px;
 }
 
 .UniqUnsplashPhotoTxt .First-name {
@@ -17,4 +39,15 @@
 
 .UniqUnsplashPhotoTxt {
     width: 40%;
+    align-items: center;
+    justify-content: center;
+   
 }
+
+.span {
+    color: orange;
+}
+
+
+
+
