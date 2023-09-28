@@ -1,6 +1,6 @@
 import React from "react";
 import './PageErrors.css'
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 function PageErrors(): JSX.Element {
 const navigation = useNavigate()
     return (

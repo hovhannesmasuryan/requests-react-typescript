@@ -6,6 +6,7 @@
     border-left: 8px solid lightblue;
     border-radius: 50%;
     animation: loading 2s linear infinite;
+    text-align: center;
 }
 
 @keyframes loading {

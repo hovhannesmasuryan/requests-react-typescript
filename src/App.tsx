@@ -15,10 +15,10 @@ function App(): JSX.Element {
       
       <Routes>
         <Route path='/' >
-          <Route index element={<UnsplashAllPhotos />}/>
-          <Route path=':id'element={<UniqUnsplashPhotoDetails  /> }/>
+          <Route index element={< UnsplashAllPhotos />}/>
+          <Route path=':id'element={< UniqUnsplashPhotoDetails /> }/>
         </Route>
-        <Route path='*' element={<PageErrors/>}/>
+        <Route path='*' element={< PageErrors />}/>
        
        </Routes>
        

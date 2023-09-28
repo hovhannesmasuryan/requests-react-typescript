@@ -3,10 +3,17 @@ import axios, {} from 'axios';
 import { useNavigate } from 'react-router-dom';
 import './UnsplashAllPhotos.css';
 import Loading from '../Loading/Loading';
+import Header from '../Header/Header';
+import PageErrors from '../PageErrors/PageErrors';
+import PhotosItem from '../PhotosItem/PhotosItem';
+
 interface Data {
   id: string;
   user: {
     name: string;
+    profile_image: {
+      medium: string;
+    };
   };
   urls: {
     small: string;
@@ -76,35 +83,16 @@ function UnsplashAllPhotos(): JSX.Element {
   };
 
   return (
-    <div>
-      <div className='Header'>
-        <h1>All Unsplash Photos</h1>
-      </div>
+    <div className='Haed'>
+     <Header/>
       <div className='Container'>
         {
           loading ? <Loading />
             : messageError ?
-              <h1 style={{ color: 'white' }}>{messageError}</h1>
+               <PageErrors />
               :
-              photos.map((photo: any) => (
-                <div className='AllInfo' key={photo.id}>
-                   <div className='profil-name-img '>                
-                      <img className='user-profile-img' src={photo.user.profile_image.medium}/>
-                      <h2 className='First-name'>{photo?.user.name}</h2>         
-                    </div>         
-
-                  <div>
-                    <div>
-                      <img src={photo?.urls?.small} alt=''  className='posted-img'/>
-                    </div>
-                    <div className='desc'>
-                      <p>Uploaded: {photo?.created_at}</p>
-                      <p className='Description'>Description: {photo?.alt_description}</p>
-                      <p className='Likes'>Like: {photo?.likes}</p>
-                      <button className='ShowMore' onClick={() => navigate(photo.id.toString())}>Show More</button>
-                    </div>
-                  </div>
-                </div>
+              photos.map((photo: Data) => (
+                <PhotosItem key={photo.id} photo={photo} navigate={navigate} />
               ))
         }
       </div>

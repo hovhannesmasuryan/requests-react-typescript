@@ -1,0 +1,48 @@
+.Mdet-Back {
+    text-align: center;
+}
+
+
+.UniqUnsplashPhotoDetails {
+    padding-top: 100px;
+    display: flex;
+    justify-content: space-evenly;    
+    width: 100%;
+}
+
+.UniqUnsplashPhotoDetails .posted-img {
+    width: 500px;
+    height: 500px;
+    border: orange 10px solid ;
+}
+
+
+.profil-name-img {
+    display: flex;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    justify-content: start; 
+    align-items: center;     
+}
+
+.Uniquser-profile-img {
+    margin-right: 10px;
+    border-radius: 50%;
+
+}
+
+.UniqUnsplashPhotoTxt {
+    width: 40%;
+    align-items: center;
+    justify-content: center;
+   
+}
+
+.span {
+    color: white;
+}
+
+p {
+    padding: 10px 0;
+}
+
